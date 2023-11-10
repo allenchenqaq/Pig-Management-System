@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pig Farm</h1>
+    <div class="table-container">
+        <div class="display-container">
+            <table id="view-table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Category
+                    </th>
+                    <th>
+                        &nbsp;
+                    </th>
+                    <th>
+                        &nbsp;
+                    </th>
+                </tr>
+            </table>
+            <button id="add-button">Add</button>
+        </div>
+        <div class="info-container">
+            <table id="moreinfo-table">
+                  <tr>
+                    <th class="title">More Info:</th>
+                    <th><button type="button" class="cancel" id="table-close">Close</button></th>
+                  </tr>
+                  <tr>
+                    <th>Name</th>
+                    <td id="name">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <th>Breed</th>
+                    <td id="breed">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <th>Height</th>
+                    <td id="height">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <th>Weight</th>
+                    <td id="weight">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <th>Personality</th>
+                    <td id="personality">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <th id="abilityName">Ability</th>
+                    <td id="ability">&nbsp;</td>
+                  </tr>  
+            </table>
+        </div>
+    </div>
+    <form id="add-new" method="post">
+        <fieldset>
+            <h3 class="title">Add New:</h3>
+            <p>            
+                <label for="add-name"><strong>Name</strong></label>
+                <input type="text" name="name" id="add-name" required autocomplete="name">
+            </p>
+            <!-- live server  -->
+            <p>            
+                <label for="add-breed"><strong>Breed</strong></label>
+                <input type="text" name="breed" id="add-breed" required>
+            </p>
+            <p>
+                <label for="add-height"><strong>Height</strong></label>
+                <input type="number" name="height" id="add-height" required>
+            </p>
+            <p>
+                <label for="add-weight"><strong>Weight</strong></label>
+                <input type="number" name="weight" id="add-weight" required>
+            </p>
+            <p>
+                <label for="add-personality"><strong>Personality</strong></label>
+                <input type="text" name="personality" id="add-personality" pattern="[^0-9]*" required>
+            </p>
+            <!-- can set grey as default -->
+            <!-- anything else we need to be awaire of? -->
+            <p>
+                <label for="add-category"><strong>Category</strong></label>
+                <select name="category" id="add-category">
+                    <option>Grey</option>
+                    <option>Chestnut</option>
+                    <option>White</option>
+                    <option>Black</option>
+                </select>
+            </p>
+            <p>
+                <label for="dynamic-input" id='dynamic-label'><strong>Swimming Score</strong></label>
+                <input type="number" name="dynamic" id="dynamic-input" placeholder="0-100" min="0" max="100" required>
+            </p>
+            <button type="submit" class="btn">Add</button>
+            <button type="button" class="btn cancel" id="form-close">Close</button>    
+        </fieldset>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.47/system-csp-production.js" integrity="sha512-a9MEwZ/fjbukKadVs1ll0UUQj6eDrbIOosbrVlXtB0Xsyp8CS8WfltP03UxVzVmpYw+QhX1SphHlePMTVNVlPA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        System.defaultJSExtensions = true;
+        System.import('main');
+    </script>
+    <!-- <script src="main.js"></script> -->
+    <!-- type="module" -->
+    <!-- <script>
+        const categorySelect = document.getElementById('add-category');
+        const dynamicLabel = document.getElementById('dynamic-label');
+
+        // Add an event listener to the category selection to update the label
+        categorySelect.addEventListener('change', function () {
+            console.log('Change event fired'); // Add this line
+            const selectedCategory = categorySelect.value;
+            console.log('Selected Category:', selectedCategory); 
+
+            if (selectedCategory === 'Grey') {
+                dynamicLabel.textContent = 'Swimming Score:';
+            } 
+            else if (selectedCategory === 'Chestnut') {
+                dynamicLabel.textContent = 'Language:';
+            } 
+            else if (selectedCategory === 'White') {
+                dynamicLabel.textContent = 'Running Score:';
+            }
+            else if (selectedCategory === 'Black') {
+                dynamicLabel.textContent = 'Strength Score:';
+            }
+        });
+    </script> -->
+</body>
+</html>
